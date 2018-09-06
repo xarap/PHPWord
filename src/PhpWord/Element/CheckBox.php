@@ -32,6 +32,8 @@ class CheckBox extends Text
      * @var string
      */
     private $name;
+    
+    private $checked;
 
     /**
      * Create new instance
@@ -41,9 +43,10 @@ class CheckBox extends Text
      * @param mixed $fontStyle
      * @param mixed $paragraphStyle
      */
-    public function __construct($name = null, $text = null, $fontStyle = null, $paragraphStyle = null)
+    public function __construct($name = null, $text = null, $fontStyle = null, $paragraphStyle = null, $checked = 0)
     {
         $this->setName($name);
+        $this->setChecked($checked);
         parent::__construct($text, $fontStyle, $paragraphStyle);
     }
 
@@ -69,4 +72,28 @@ class CheckBox extends Text
     {
         return $this->name;
     }
+    
+    /**
+     * Set checked value
+     *
+     * @param $value default 0 (valid value: 0, 1, true, false, on, off)
+     * @return self
+     */
+    public function setChecked($value)
+    {
+        $this->checked = $value;
+
+        return $this;
+    }
+    
+    /**
+     * Get checked value
+     *
+     * @return string
+     */
+    public function getChecked()
+    {
+        return $this->checked;
+    }
+    
 }
