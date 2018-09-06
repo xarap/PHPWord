@@ -53,6 +53,11 @@ class CheckBox extends Text
         $xmlWriter->startElement('w:default');
         $xmlWriter->writeAttribute('w:val', 0);
         $xmlWriter->endElement(); //w:default
+        /* new attribute checked */
+        $xmlWriter->startElement('w:checked');
+        $xmlWriter->writeAttribute('w:val', $element->getChecked());
+        $xmlWriter->endElement(); //w:checked
+        
         $xmlWriter->endElement(); //w:checkBox
         $xmlWriter->endElement(); // w:ffData
         $xmlWriter->endElement(); // w:fldChar
